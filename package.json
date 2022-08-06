@@ -1,0 +1,17 @@
+{
+  "name": "curso_asincronismo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "callback": "node src/callbacks/challenge.js"
+  },
+  "keywords": [
+    "javascript"
+  ],
+  "author": "john cordova <librededrogas420@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "xmlhttprequest": "^1.8.0"
+  }
+}
