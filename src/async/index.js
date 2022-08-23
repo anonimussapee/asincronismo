@@ -1,26 +1,15 @@
-import fetch from "node-fetch";
+import fetch from 'node-fetch';
 const API='https://api.escuelajs.co/api/v1';
 async function pedir(urlapi){
     const response=await fetch(urlapi);
     const dato=await response.json();
     return dato;
 }
-const fnasync=async(urlapi)=>{
-try{
-const products=await pedir(`${urlapi}/products`);
-const product=await pedir(`${urlapi}/products/${products[203].id}`);
-const category=await pedir(`${urlapi}/categories/${product.category.id}`);
-console.log(product);
-//console.log(products.indexOf(product));
-console.log(product.title);
-console.log(category.name);
-}catch{
-const err=new Error('UPS! tienes un error en '+urlapi);
-console.error(err);
-}
-};
-fnasync(API);
-
+const mostrar=async ()=>{
+    try{
+const datos= await pedir(`${API}/products`);
+console.log(datos);}catch (err){console.log(err);}};
+mostrar()
 const promesa=()=>{
     return new Promise((y,n)=>{
         (true)? setTimeout(()=>y('promise async'),2000):n(new Error('UPS! hay un error'));
